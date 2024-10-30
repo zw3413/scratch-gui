@@ -95,7 +95,7 @@ const distConfig = baseConfig.clone()
 
 // build the examples and debugging tools in `build/`
 const buildConfig = baseConfig.clone()
-    .enableDevServer(process.env.PORT || 8601)
+    .enableDevServer(process.env.PORT || 8095)
     .merge({
         entry: {
             gui: './src/playground/index.jsx',
