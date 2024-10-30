@@ -3,7 +3,7 @@ version: '3.8'
 services:
   app:
     image: node:16 # 使用官方的 Node.js 镜像
-    container_name: my-nodejs-app
+    container_name: my-scratch
     working_dir: /usr/src/app
     environment:
       - NODE_ENV=production
@@ -13,4 +13,4 @@ services:
       context: .
       dockerfile: Dockerfile
     command: ["npm", "start"] # 根据 package.json 文件中的配置运行项目
-    #restart: always # 容器挂掉时自动重启
+    restart: always # 容器挂掉时自动重启
