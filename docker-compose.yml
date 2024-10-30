@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    image: node:16 # 使用官方的 Node.js 镜像
+    container_name: my-nodejs-app
+    working_dir: /usr/src/app
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "8092:8601" # 将本地 3000 端口映射到容器内的 3000 端口
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["npm", "start"] # 根据 package.json 文件中的配置运行项目
+    #restart: always # 容器挂掉时自动重启
