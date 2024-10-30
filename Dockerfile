@@ -7,10 +7,11 @@ WORKDIR /usr/src/app
 # 复制 package.json 和 package-lock.json 并安装依赖
 # 确保在 Dockerfile 中
 COPY package*.json ./
-RUN npm install
-
 # 将项目文件复制到容器中
 COPY . .
+RUN npm install
+
+
 
 # 构建项目
 RUN npm run build
