@@ -18,7 +18,7 @@ const baseConfig = new ScratchWebpackConfigBuilder(
     .setTarget('browserslist')
     .merge({
         output: {
-            assetModuleFilename: 'static/assets/[name].[hash][ext][query]',
+            assetModuleFilename: 'static/assets/[name].[ext][query]',
             library: {
                 name: 'GUI',
                 type: 'umd2'
