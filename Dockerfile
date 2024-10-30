@@ -17,7 +17,7 @@ RUN npm install
 RUN npm run build
 
 # 暴露端口
-EXPOSE 8061
+EXPOSE 8095
 
 # 启动应用
 CMD ["npm", "start"]
