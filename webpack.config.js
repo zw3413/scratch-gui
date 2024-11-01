@@ -13,7 +13,11 @@ const baseConfig = new ScratchWebpackConfigBuilder(
     {
         rootPath: path.resolve(__dirname),
         enableReact: true,
-        shouldSplitChunks: false
+        shouldSplitChunks: false,
+        devServer: {
+            compress: true,
+            public: 'store-client-nestroia1.c9users.io' // That solved it
+        }
     })
     .setTarget('browserslist')
     .merge({
