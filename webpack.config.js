@@ -16,7 +16,7 @@ const baseConfig = new ScratchWebpackConfigBuilder(
         shouldSplitChunks: false,
         devServer: {
             compress: true,
-            public: 'store-client-nestroia1.c9users.io' // That solved it
+            disableHostCheck: true// That solved it
         }
     })
     .setTarget('browserslist')
