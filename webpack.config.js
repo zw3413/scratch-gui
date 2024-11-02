@@ -17,6 +17,10 @@ const baseConfig = new ScratchWebpackConfigBuilder(
     })
     .setTarget('browserslist')
     .merge({
+        devServer: {
+            allowedHosts: 'all'
+            // other devServer options
+        },
         output: {
             assetModuleFilename: 'static/assets/[name].[ext][query]',
             library: {
