@@ -13,11 +13,7 @@ const baseConfig = new ScratchWebpackConfigBuilder(
     {
         rootPath: path.resolve(__dirname),
         enableReact: true,
-        shouldSplitChunks: false,
-        devServer: {
-            compress: true,
-            disableHostCheck: true// That solved it
-        }
+        shouldSplitChunks: false
     })
     .setTarget('browserslist')
     .merge({
