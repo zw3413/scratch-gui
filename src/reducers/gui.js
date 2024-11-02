@@ -1,3 +1,14 @@
+import _ from 'lodash';
+if (!Object.prototype.groupBy) {
+    Object.defineProperty(Object.prototype, 'groupBy', {
+        value: function (key) {
+            return _.groupBy(this, key);
+        },
+        writable: true,
+        configurable: true
+    });
+}
+
 import {applyMiddleware, compose, combineReducers} from 'redux';
 import alertsReducer, {alertsInitialState} from './alerts';
 import assetDragReducer, {assetDragInitialState} from './asset-drag';
