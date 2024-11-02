@@ -8,6 +8,17 @@ import {remixProject} from './reducers/project-state';
 import {setAppElement} from 'react-modal';
 import _ from 'lodash';
 
+
+if (!Object.prototype.groupBy) {
+    Object.defineProperty(Object.prototype, 'groupBy', {
+        value: function (key) {
+            return _.groupBy(this, key);
+        },
+        writable: true,
+        configurable: true
+    });
+}
+
 const guiReducers = {
     locales: LocalesReducer,
     scratchGui: GuiReducer,
