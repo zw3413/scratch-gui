@@ -11,7 +11,7 @@ import Filter from '../filter/filter.jsx';
 import TagButton from '../../containers/tag-button.jsx';
 import Spinner from '../spinner/spinner.jsx';
 import {CATEGORIES} from '../../../src/lib/libraries/decks/index.jsx';
-
+import _ from "lodash"
 import styles from './library.css';
 
 const messages = defineMessages({
@@ -218,7 +218,7 @@ class LibraryComponent extends React.Component {
             return data.map(item => this.renderElement(item));
         }
 
-        const dataByCategory = Object.groupBy(data, el => el.category);
+        const dataByCategory = _.groupBy(data, el => el.category);
         const categoriesOrder = Object.values(CATEGORIES);
 
         return Object.entries(dataByCategory)
